@@ -71,6 +71,9 @@
               <div class="col">
                 <button class="btn" type="button"> <a  href="{% url 'mainboard' %}">Submit </a></button>
               </div>
+              <div class="col">
+                <button class="btn" type="button"> <a  href="{% url 'profile' %}">Sign Up </a></button>
+              </div>
             </div>
           </div>
         </div>
@@ -106,3 +109,24 @@
     </div>
   </div>
 </section>
+{% block javascript %}
+<script>
+  function userlogin(val1,val2,val3) {
+    console.log("userlogin!");
+    console.log(val1)
+    console.log(val2)
+    console.log(val3)
+    $.ajax({
+      url: '/polls/profileupdate/',
+      data: {
+        'username': val1,
+        'userpassword' : val2
+      },
+      success: function (data) {
+
+        $("html").html(data);
+      }
+  })
+};
+</script>
+{% endblock %}
