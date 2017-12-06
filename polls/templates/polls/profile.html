@@ -130,10 +130,11 @@
           'location' : location
         },
         success: function (data) {
-          if("notvalid" in data ){
-            alarm("Username exists or password not match! Please retry");
+          if(data.notvalid ){
+            alert("Username exists or password not match! Please retry");
           }else{
-            $("html").html(data);
+            alert("Successfully signed up!")
+            //$("html").html(data);
           }
 
         }
