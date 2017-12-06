@@ -124,6 +124,30 @@
 {% endif %}
     <!-- </ul> -->
 
+{% if recommand_friend %}
+<table id = '_appendHere' style="width: 100%;" class="table table-striped table-bordered ">
+<thead><tr><th class="text-center" colspan="4">People has similar interests with you</th></tr></thead>
+  <thead>
+      <tr>
+        <th>User name</th>
+        <th>Location</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+  <tbody>
+{% for people in recommand_friend %}
+  <tr>
+    <td style="width: 25%;"> {{people.username}}</td>
+    <td style="width: 25%;"> {{people.location}}</td>
+    <td style="width: 25%;"> {{people.gender}}</td>
+    <td style="width: 25%;"> <button type="submit" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
 {% block javascript %}
   <script>
     function insertFunction(val) {
