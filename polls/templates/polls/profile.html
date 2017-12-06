@@ -76,7 +76,16 @@
                 <input type="text" id = "username" class="form-control" placeholder={{user_info.name}}>
               </div>
             </div>
-
+            <div class="row mt-4">
+              <div class="col">
+                <input type="text" id = "password1" class="form-control"  placeholder={{user_info.password}}>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <input type="text" id = "password2" class="form-control"  placeholder={{user_info.password1}}>
+              </div>
+            </div>
             <div class="row mt-4">
               <div class="col">
                 <input type="text" id = "usergender" class="form-control" placeholder={{user_info.gender}}>
@@ -90,7 +99,7 @@
             </div>
             <div class="row mt-4">
               <div class="col">
-                <button type="button" class="btn" onclick="profileFunction(document.getElementById('username').value,document.getElementById('usergender').value,document.getElementById('userlocation').value)">Submit</button>
+                <button type="button" class="btn" onclick="profileFunction(document.getElementById('username').value,document.getElementById('password1').value,document.getElementById('password2').value,document.getElementById('usergender').value,document.getElementById('userlocation').value)">Submit</button>
               </div>
             </div>
           </form>
@@ -104,17 +113,21 @@
 
 {% block javascript %}
   <script>
-    function profileFunction(val1,val2,val3) {
+    function profileFunction(username,password1,password2,gender,location) {
       console.log("profile!");
-      console.log(val1)
-      console.log(val2)
-      console.log(val3)
+      console.log(username)
+      console.log(password1)
+      console.log(password2)
+      console.log(gender)
+      console.log(location)
       $.ajax({
         url: '/polls/profileupdate/',
         data: {
-          'newname': val1,
-          'newgender' : val2,
-          'newlocation' : val3
+          'username': username,
+          'password1' : password1,
+          'password2' : password2,
+          'gender' : gender,
+          'location' : location
         },
         success: function (data) {
           $("html").html(data);
