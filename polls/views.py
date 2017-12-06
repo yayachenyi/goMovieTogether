@@ -24,6 +24,18 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 
+def login(request):
+    #check whether user exists, if yes return search page
+    print(request)
+    #if not return HttpResponse
+    return HttpResponse("You're voting on question %s." % question_id)
+
+def singup(request):
+    # insert into user database
+
+    # return searchdatabase
+    return HttpResponse("You're voting on question %s." % question_id)
+
 def mainboard(request):
     print("inside mainboard")
     #print(wishmovie)
