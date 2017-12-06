@@ -130,7 +130,12 @@
           'location' : location
         },
         success: function (data) {
-          $("html").html(data);
+          if("notvalid" in data ){
+            alarm("Username exists or password not match! Please retry");
+          }else{
+            $("html").html(data);
+          }
+
         }
     })
   };
