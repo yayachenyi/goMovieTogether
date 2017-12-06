@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^profileupdate/$', views.profileupdate, name='profileupdate'),
     url(r'^autocomplete/', views.autocomplete, name='autocomplete'),
+    url(r'^login/', views.login, name='login'),
+    url(r'^singup/', views.singup, name='singup'),
 ]
