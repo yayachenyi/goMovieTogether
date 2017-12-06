@@ -1,0 +1,79 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<head>
+<style>
+    .fdb-block {
+      border-bottom: solid 1px #EEE;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+
+    <script src="http://localhost:35729/livereload.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+{% load static %}
+<section class="fdb-block" style="background-image: url({% static 'polls/imgs/poster1.jpg' %})">
+<div class="container">
+      <div class="row justify-content-end">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
+          <div class="fdb-box">
+            <div class="row">
+              <div class="col">
+                <h1>Log In</h1>
+                <p class="text-h3">Right at the coast of the Semantics, a large language ocean. A small river named Duden.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col mt-4">
+                <input type="text" class="form-control" placeholder="Email">
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <button class="btn" type="button"> <a  href="{% url 'mainboard' %}">Submit </a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="fdb-block">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-left">
+        <h1>Movie Together</h1>
+        <p class="text-h3">MovieTogether will recommend the most possibly interesting movies for the registered movie chasers. Meanwhile, our application will also push the nearby people who have the same interests on the same movie.</p>
+
+        <img alt="image" class="img-fluid mt-5" src="{% static 'polls/imgs/poster1.jpg' %}">
+      </div>
+    </div>
+
+    <div class="row text-left pt-5">
+      <div class="col-12 col-md-6">
+        <h3><strong>Feature One</strong></h3>
+
+        <p>(Movie recommendation): Based on the movies that you have watched, MovieTogether would recommend new movies for you. Think about the embarrassment when you finally have a hard-won Saturday night which you really want some real fun to spend the good time. It is great you do not to waste the time to find ideal movies. It is even greater that you do not need to bear the risk to waste your rare unoccupied Saturday night with some thing you do not really like. Just use MoviewTogether and enjoy! Let MovieTogether solve all these problems for you. MoviewTogether will use machine learning algorithm to analyze your history and predict the potential movies you will like and suggest them to you.</p>
+
+        <p><a href="https://www.froala.com">Learn More &gt;</a></p>
+      </div>
+      <div class="col-12 col-md-6 pt-4 pt-md-0">
+        <h3><strong>Feature Two</strong></h3>
+
+        <p> (Movie together): Once you add a new movie to your wishlist. We will recommend you the nearby users who also put this movie into the wish list and have similar time preference as you. Once you found the suggestion, you could start a private chatting with that user and go for that movie together! This is a great opportunity to meet new friends with similar interests!</p>
+
+        <p><a href="https://www.froala.com">Learn More &gt;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
