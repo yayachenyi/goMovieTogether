@@ -60,10 +60,11 @@
   <tbody>
 {% for movie in movie_list %}
   <tr>
-    <td style="width: 25%;"> {{movie.title}}</td>
-    <td style="width: 25%;"> {{movie.year}}</td>
-    <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button class="btn" type="button" onclick="insertFunction('{{movie.movieid}}')">Unlike!</button></td>
+    <td style="width: 20%;"> {{movie.title}}</td>
+    <td style="width: 20%;"> {{movie.year}}</td>
+    <td style="width: 20%;"> {{movie.genre}}</td>
+    <td style="width: 20%;"> <button class="btn" type="button" onclick="insertFunction('{{movie.movieid}}')">Unlike!</button></td>
+    <td style="width: 20%;"> <button class="btn" type="button" onclick="addtoWatch('{{movie.movieid}}')">Watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
@@ -86,6 +87,27 @@
         },
         success: function (data) {
           $("html").html(data);
+        }
+    })
+  };
+  </script>
+  <script>
+    function addtoWatch(val) {
+      console.log(val);
+      var movie = val
+      $.ajax({
+        url: '/polls/addtowatch/',
+        data: {
+          'movie': movie,
+          'userid' : 0
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.exists) {
+            alert("A user with this username already exists.");
+          }else{
+            alert("Successfully added to your wishlist!");
+          }
         }
     })
   };
