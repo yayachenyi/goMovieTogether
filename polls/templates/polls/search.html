@@ -43,7 +43,7 @@
             <a class="nav-link" href="http://172.22.94.219/polls/profile">Sign Up</a>
           </li>
           <li class="nav-item">
-            <button class="btn" type="button" onclick="deleteAccount()">Delete Account</button>
+            <button class="btn" type="button" onclick="searchFunction(document.getElementById('places').value)">Delete Account</button>
           </li>
         </ul>
       </div>
@@ -192,6 +192,7 @@
   })
 };
   function deleteAccount(){
+    console.log("inside deleteAccount")
     $.ajax({
       url: '/polls/deleteaccount/'
       success: function (data) {
