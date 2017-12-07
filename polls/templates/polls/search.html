@@ -59,7 +59,7 @@
             </span>
           </div>
 
-          <p class="text-h4">Find us on <a href="https://www.froala.com">Facebook</a> and <a href="https://www.froala.com">Twitter</a>.</p>
+          <p class="text-h4">Find us on <a href="https://www.facebook.com">Facebook</a> and <a href="https://www.twitter.com">Twitter</a>.</p>
         </div>
       </div>
     </div>
@@ -78,16 +78,18 @@
         <th>Movie Name</th>
         <th>Year</th>
         <th>Genre</th>
+        <th>Average Rating</th>
         <th>Action</th>
       </tr>
     </thead>
   <tbody>
 {% for movie in movie_list %}
   <tr>
-    <td style="width: 25%;"> {{movie.title}}</td>
-    <td style="width: 25%;"> {{movie.year}}</td>
-    <td style="width: 25%;"> {{movie.genre}}</td>
-    <td style="width: 25%;"> <button class="btn" type="submit" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
+    <td style="width: 20%;"> {{movie.title}}</td>
+    <td style="width: 20%;"> {{movie.year}}</td>
+    <td style="width: 20%;"> {{movie.genre}}</td>
+    <td style="width: 20%;"> {{movie.revenue}}</td>
+    <td style="width: 20%;"> <button class="btn" type="submit" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
