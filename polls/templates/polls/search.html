@@ -193,10 +193,7 @@
 };
   function deleteAccount(){
     $.ajax({
-      url: '/polls/deleteaccount/',
-      data: {
-        'qquery': qq
-      },
+      url: '/polls/deleteaccount/'
       success: function (data) {
         $("html").html(data);
       }
