@@ -192,6 +192,19 @@
       }
   })
 };
+
+function deleteAccount(val){
+  console.log("search query")
+  $.ajax({
+    url: '/polls/searchupdate/',
+    data: {
+      'qquery': "qq"
+    },
+    success: function (data) {
+      $("html").html(data);
+    }
+})
+};
   </script>
 
 
