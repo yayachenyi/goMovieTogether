@@ -78,6 +78,7 @@
         <th>Movie Name</th>
         <th>Year</th>
         <th>Genre</th>
+        <th>Total Reviews</th>
         <th>Average Rating</th>
         <th>Action</th>
       </tr>
@@ -86,10 +87,11 @@
 {% for movie in movie_list %}
   <tr>
     <td style="width: 20%;"> {{movie.title}}</td>
-    <td style="width: 20%;"> {{movie.year}}</td>
-    <td style="width: 20%;"> {{movie.genre}}</td>
-    <td style="width: 20%;"> {{movie.revenue}}</td>
-    <td style="width: 20%;"> <button class="btn" type="submit" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
+    <td style="width: 16%;"> {{movie.year}}</td>
+    <td style="width: 16%;"> {{movie.genre}}</td>
+    <td style="width: 16%;"> {{movie.votes}}</td>
+    <td style="width: 16%;"> {{movie.revenue}}</td>
+    <td style="width: 16%;"> <button class="btn" type="submit" onclick="insertFunction('{{movie.movieid}}')">Want to watch!</button></td>
   </tr>
 {% endfor %}
   </tbody>
