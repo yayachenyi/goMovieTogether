@@ -21,19 +21,22 @@
   </style>
 </head>
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-<script>
-function deleteAccount(){
-  console.log("inside deleteAccount")
-  $.ajax({
-    url: '/polls/deleteaccount/'
-    success: function (data) {
-      $("html").html(data);
-    }
-})
-};
-</script>
+
 
 <header>
+  {% block javascript %}
+  <script>
+  function deleteAccount(){
+    console.log("inside deleteAccount")
+    $.ajax({
+      url: '/polls/deleteaccount/'
+      success: function (data) {
+        $("html").html(data);
+      }
+  })
+  };
+  {% endblock %}
+  </script>
   <div class="container">
     <nav class="navbar navbar-expand-md">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav0" aria-controls="navbarNav0" aria-expanded="false" aria-label="Toggle navigation">
